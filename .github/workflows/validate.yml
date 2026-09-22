@@ -1,0 +1,39 @@
+name: Validate Hermes plugin
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out plugin
+        uses: actions/checkout@v4
+
+      - name: Check out Hermes dependency PR
+        uses: actions/checkout@v4
+        with:
+          repository: NousResearch/hermes-agent
+          ref: refs/pull/118985/head
+          path: _hermes
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Install Hermes development environment
+        run: uv sync --directory _hermes --extra dev --extra messaging
+
+      - name: Unit tests
+        run: PYTHONPATH="$PWD/_hermes" _hermes/.venv/bin/python -m pytest -q
+
+      - name: Ruff
+        run: PYTHONPATH="$PWD/_hermes" _hermes/.venv/bin/ruff check . --exclude _hermes
+
+      - name: Hermes plugin validation
+        run: |
+          _hermes/.venv/bin/hermes plugins validate --install-deps .
+          _hermes/.venv/bin/hermes plugins doctor . --ci
