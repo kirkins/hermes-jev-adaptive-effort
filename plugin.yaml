@@ -1,5 +1,5 @@
 name: jev-adaptive-effort
-version: "0.1.2"
+version: "0.1.3"
 description: "Use TypeSafe Jev through OpenRouter to choose a cache-safe reasoning effort for each user turn."
 author: "kirkins"
 kind: standalone
@@ -12,6 +12,8 @@ tags:
   - reasoning
   - openrouter
   - adaptive
+provides_middleware:
+  - reasoning_effort
 requires_env:
   - name: OPENROUTER_API_KEY
     description: "API key used to call TypeSafe Jev through OpenRouter's Decisions API."
