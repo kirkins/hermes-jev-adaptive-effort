@@ -24,7 +24,7 @@ While the catalog PR is pending:
 hermes plugins install https://github.com/kirkins/hermes-jev-adaptive-effort --enable
 ```
 
-Hermes prompts for `OPENROUTER_API_KEY` during installation and stores it in the active profile's `.env`. Create a key at [OpenRouter](https://openrouter.ai/settings/keys).
+If `OPENROUTER_API_KEY` is already configured in the active Hermes profile, the plugin reuses it and the installer does not prompt again. Otherwise Hermes prompts for the key during installation and stores it in that profile's `.env`. Create a key at [OpenRouter](https://openrouter.ai/settings/keys).
 
 The public default is `shadow`: Jev decisions are logged but not applied. After observing the choices, enable enforcement in `~/.hermes/config.yaml`:
 
