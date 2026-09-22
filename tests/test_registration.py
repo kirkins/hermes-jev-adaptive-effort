@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def test_manifest_declares_actual_capabilities():
     manifest = yaml.safe_load((ROOT / "plugin.yaml").read_text())
     assert manifest["name"] == "jev-adaptive-effort"
-    assert manifest["provides_middleware"] == ["reasoning_effort"]
+    assert "provides_middleware" not in manifest
     assert [item["name"] for item in manifest["requires_env"]] == ["OPENROUTER_API_KEY"]
 
 

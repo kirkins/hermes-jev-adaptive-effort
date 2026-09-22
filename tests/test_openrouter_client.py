@@ -71,7 +71,7 @@ def test_direct_openrouter_request_is_bounded_and_authenticated(plugin_package):
     assert opener.request.method == "POST"
     assert opener.request.get_header("Authorization") == "Bearer or-secret-value"
     assert opener.request.get_header("Content-type") == "application/json"
-    assert opener.request.get_header("User-agent") == "hermes-jev-adaptive-effort/0.1.1"
+    assert opener.request.get_header("User-agent") == "hermes-jev-adaptive-effort/0.1.2"
     payload = json.loads(opener.request.data)
     assert payload["model"] == "typesafe/jev-1.13"
     assert payload["questions"]["effort"]["criteria"] == offered
