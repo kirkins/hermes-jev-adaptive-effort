@@ -52,7 +52,7 @@ hermes plugins install jev-adaptive-effort --enable
 
 ## Supported routes
 
-Hermes core—not this plugin—decides whether a route supports cache-preserving effort updates and which levels are legal. With the dependency PRs, qualified routes include official ChatGPT Responses routes for GPT-5.6 Luna/Terra/Sol and GPT-6 Astra, plus supported Anthropic Messages routes. Unknown routes and ordinary Chat Completions routes fail closed.
+Hermes core—not this plugin—decides whether a route supports cache-preserving effort updates and which levels are legal. With the dependency PRs, qualified routes include the official OpenAI Responses API for GPT-6 Astra, Luna, and Sol; supported ChatGPT/Codex Responses routes for GPT-5.6 and GPT-6 models; and supported Anthropic Messages routes. Unknown routes and ordinary Chat Completions routes fail closed.
 
 ## Privacy and cost
 
