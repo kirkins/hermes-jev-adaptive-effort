@@ -1,5 +1,5 @@
 name: jev-adaptive-effort
-version: "0.1.0"
+version: "0.1.1"
 description: "Use TypeSafe Jev through OpenRouter to choose a cache-safe reasoning effort for each user turn."
 author: "kirkins"
 kind: standalone

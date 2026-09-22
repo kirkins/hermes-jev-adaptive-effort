@@ -11,7 +11,7 @@ from typing import Any
 
 ENDPOINT = "https://openrouter.ai/api/alpha/decisions"
 MODEL = "typesafe/jev-1.13"
-USER_AGENT = "hermes-jev-adaptive-effort/0.1.0"
+USER_AGENT = "hermes-jev-adaptive-effort/0.1.1"
 MAX_REQUEST_BYTES = 64 * 1024
 MAX_RESPONSE_BYTES = 64 * 1024
 PROBABILITY_SUM_TOLERANCE = 1e-3
